@@ -1,0 +1,17 @@
+[Unit]
+Description=Universal Media Server
+After=network-online.target polkit.service sound.target nss-lookup.target remote-fs.target systemd-user-sessions.service bluetooth.target
+Wants=network-online.target polkit.service sound.target
+
+[Service]
+Type=simple
+User=ums
+Group=ums
+ExecStart=/opt/UMS/UMS.sh
+ExecStop=/usr/bin/pkill -f 'java .*ums.jar.*'
+Restart=on-failure
+RestartSec=10s
+Environment=UMS_PROFILE=/var/lib/ums/UMS.conf
+
+[Install]
+WantedBy=graphical.target
