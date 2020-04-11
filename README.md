@@ -33,3 +33,19 @@ cp ums.service /usr/lib/systemd/system/ums.service
 systemctl enable ums.service
 systemctl start ums.service
 ```
+
+## Configuration
+
+The configuration file used by UMS is `/var/lib/ums/UMS.conf`.
+
+### Example configuration files
+
+You can find example files for `UMS.conf` in the [examples](./examples) directory.
+
+### Media folders
+
+You can configure UMS to use multiple media folders like this:
+
+```bash
+folders = /var/lib/ums/Media Library, /home/{put-your-username-here}/ums/Media Library
+```
