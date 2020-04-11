@@ -44,7 +44,19 @@ You can find example files for `UMS.conf` in the [examples](./examples) director
 
 ### Media folders
 
-You can configure UMS to use multiple media folders like this:
+The default media folders is `/var/lib/ums/Media Library`, which contains three subfolders:
+
+* `/var/lib/ums/Media Library/Audio`
+* `/var/lib/ums/Media Library/Photo`
+* `/var/lib/ums/Media Library/Video`
+
+You can configure UMS to use another media folder:
+
+```bash
+folders = /home/{put-your-username-here}/ums/Media Library
+```
+
+Or even multiple media folders:
 
 ```bash
 folders = /var/lib/ums/Media Library, /home/{put-your-username-here}/ums/Media Library
