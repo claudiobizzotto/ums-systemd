@@ -8,9 +8,11 @@ Type=simple
 User=ums
 Group=ums
 ExecStart=/opt/ums/UMS.sh
-ExecStop=/usr/bin/pkill -f 'java .*ums.jar.*'
 Restart=on-failure
 RestartSec=10s
+ExecStop=/usr/bin/pkill --signal SIGINT -f 'java .*ums.jar.*'
+StandardOutput=file:/var/lib/ums/debug.log
+StandardError=inherit
 Environment=UMS_PROFILE=/var/lib/ums/UMS.conf
 
 [Install]

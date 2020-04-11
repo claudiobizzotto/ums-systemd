@@ -20,12 +20,6 @@ cp ums.tmpfiles.conf /usr/lib/tmpfiles.d/ums.conf
 systemd-tmpfiles --create
 ```
 
-### Create default profile in home directory
-
-```bash
-cp /opt/ums/UMS.conf /var/lib/ums/UMS.conf
-```
-
 ### Create service unit
 
 ```bash
